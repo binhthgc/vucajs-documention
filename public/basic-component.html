@@ -1,0 +1,525 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+
+	<title>IScripting</title>
+
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+
+	<!-- dependencies (jquery, handlebars and bootstrap) -->
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/alpaca/handlebars.min.js"></script>
+	<link type="text/css" href="css/bootstrap.min.css" rel="stylesheet" />
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<!-- alpaca -->
+	<link type="text/css" href="css/alpaca.min.css" rel="stylesheet" />
+	<link type="text/css" href="css/style.css" rel="stylesheet" />
+	<script type="text/javascript" src="js/alpaca/alpaca.min.js"></script>
+	
+	<link type="text/css" href="css/spectrum.css" rel="stylesheet" />
+	<script type="text/javascript" src="js/alpaca/spectrum.js"></script>
+	<script type="text/javascript" src="js/alpaca/ace.js"></script>
+	<link type="text/css" href="http://www.alpacajs.org/lib/summernote/dist/summernote.css" rel="stylesheet" />
+	<script type="text/javascript" src="http://www.alpacajs.org/lib/summernote/dist/summernote.min.js"></script>
+	
+	<link type="text/css" href="css/bootstrap-datetimepicker.css" rel="stylesheet" />
+	<script type="text/javascript" src="js/alpaca/moment-with-locales.min.js"></script>
+	<script type="text/javascript" src="js/alpaca/bootstrap-datetimepicker.min.js"></script>
+
+	<link type="text/css" href="css/bootstrap-multiselect.css" rel="stylesheet" />
+	<script type="text/javascript" src="js/alpaca/bootstrap-multiselect.js"></script>
+
+	<!-- fileupload control (for UploadField) -->
+	<link rel="stylesheet" type="text/css" href="http://www.alpacajs.org/lib/blueimp-file-upload/css/jquery.fileupload.css">
+	<link rel="stylesheet" type="text/css" href="http://www.alpacajs.org/lib/blueimp-file-upload/css/jquery.fileupload-ui.css">
+	<script src="http://www.alpacajs.org/lib/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+	<script src="http://www.alpacajs.org/lib/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+	<script src="http://www.alpacajs.org/lib/blueimp-file-upload/js/jquery.fileupload.js"></script>
+	<script src="http://www.alpacajs.org/lib/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+	<script src="http://www.alpacajs.org/lib/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
+
+	<!-- vuejs -->
+	<script src="js/axios.min.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+
+	<script type="text/javascript" src="js/codemirror/codemirror.js"></script>
+	<link rel="stylesheet" href="css/codemirror.css">
+	<script src="js/codemirror/javascript.js"></script>
+	<!-- css -->
+	<link type="text/css" href="css/main.css" rel="stylesheet" />
+	<link type="text/css" href="css/animate.min.css" rel="stylesheet" />
+	<script type="text/javascript" src="js/vucajs/form-builder.js"></script>
+
+</head>
+
+<body>
+
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-md-3 sidebar-holder">
+
+				<header class="sidebar-header" role="banner">
+					<a href="/">
+						<img src="images/av.png" class="img-circle">
+					</a>
+					<h3 class="title">
+						<a href="/">VuecaJS</a>
+					</h3>
+					<p class="subtitle">Combination of alpacaJS and VueJs
+						<br> Open Source
+					</p>
+				</header>
+
+				<div id="contact-list" class="text-center">
+					<ul class="list-unstyled list-inline">
+
+						<li>
+							<a class="btn btn-default btn-sm" href="https://github.com/IScripting/vucajs">
+								<i class="fa fa-github-alt fa-lg"></i>
+							</a>
+						</li>
+
+						<li>
+							<a class="btn btn-default btn-sm" href="mailto:binhth.alpaca@gmail.com">
+								<i class="fa fa-envelope fa-lg"></i>
+							</a>
+						</li>
+
+					</ul>
+
+				</div>
+
+				<div>
+					<ul class="nav nav-pills nav-stacked sidenav">
+						<li>
+							<a href="index.html">Overview</a>
+						</li>
+						<li>
+							<a href="basic-component.html">Basic components</a>
+						</li>
+						<li>
+							<a href="ui-component.html">UI components</a>
+						</li>
+
+					</ul>
+				</div>
+
+			</div>
+			<div class="col-md-9">
+
+				<h4>Core Fields</h4>
+
+				<ul>
+
+					<li>
+						<a href="#anchor1">Form - Basic Components</a>
+					</li>
+					<li>
+						<a href="#anchor2">Form - Single File Upload</a>
+					</li>
+					<li>
+						<a href="#anchor3">Form - Multiple File Upload</a>
+					</li>
+
+				</ul>
+
+				<a name="anchor1"></a>
+				<div class="page-header">
+
+					<h1> Form - Basic Components</h1>
+
+				</div>
+				<div class="panel with-nav-tabs">
+					<div class="panel-heading">
+						<ul class="nav nav-tabs">
+							<li class="active">
+								<a href="#basicComponentsDemo" data-toggle="tab">Demo</a>
+							</li>
+							<li>
+								<a href="#basicComponentsSource" data-toggle="tab">
+									<i class="fa fa-code" aria-hidden="true"></i> Source Code</a>
+							</li>
+						</ul>
+					</div>
+					<div class="panel-body">
+						<div class="tab-content">
+							<div class="tab-pane fade in active" id="basicComponentsDemo">
+									
+								<div id="basicComponentFormBuilder" style="overflow: hidden;"></div>
+								
+								<div class="clearfix">
+										<button id="callBTN" class="btn btn-primary">call alert from list</button>
+								</div>
+								<script type="text/javascript">
+
+									var formBuilder = new FormBuilder({
+										el: "basicComponentFormBuilder",
+										groupId: 20143,
+										className: "iscripting",
+										classPK: "115",
+										dataPK: "115",
+										data: {
+											"inputText": "sac"
+										},
+										options: {
+											"inputText": {
+                								"id": "inputText",
+												"name": "inputText",
+												"required": true,
+												"type": "text",
+												"label": "label inputText: ",
+												"placeholder": "description",
+												"fieldClass": "form-inline vuejs-col-8"
+											},
+											"inputEmail": {
+                								"id": "inputEmail",
+												"name": "inputEmail",
+												"required": false,
+												"type": "email",
+												"label": "label inputEmail: ",
+												"placeholder": "email address example: abc@google.com",
+												"fieldClass": "form-inline vuejs-col-8"
+											},
+											"inputHidden": {
+                								"id": "inputHidden",
+												"name": "inputHidden",
+												"required": false,
+												"type": "hidden",
+											},
+											"inputNumber": {
+                								"id": "inputNumber",
+												"name": "inputNumber",
+												"required": false,
+												"type": "number",
+												"label": "label inputNumber: ",
+												"placeholder": "number format",
+												"fieldClass": "form-inline vuejs-col-8"
+											},
+											"inputPassWord": {
+                								"id": "inputPassWord",
+												"name": "inputPassWord",
+												"required": false,
+												"type": "password",
+												"label": "label inputPassWord: ",
+												"placeholder": "password",
+												"fieldClass": "form-inline vuejs-col-8"
+											},
+											"inputTime": {
+                								"id": "inputTime",
+												"name": "inputTime",
+												"required": false,
+												"type": "time",
+												"label": "label inputTime: ",
+												"placeholder": "HH24:mm:ss",
+												"dateFormat": "HH:mm:ss",
+												"fieldClass": "form-inline vuejs-col-8"
+											},
+											"inputDate": {
+                								"id": "inputDate",
+												"name": "inputDate",
+												"required": false,
+												"type": "date",
+												"label": "label inputDate: ",
+												"placeholder": "DD/MM/YYYY",
+        										"picker": {
+													"format": "DD/MM/YY"
+												},
+												"manualEntry": true,
+												"fieldClass": "form-inline vuejs-col-8"
+											},
+											"inputDateTime": {
+                								"id": "inputDateTime",
+												"name": "inputDateTime",
+												"required": false,
+												"type": "datetime",
+												"label": "label inputDateTime: ",
+												"placeholder": "DD/MM/YYYY HH24:mm:ss",
+        										"picker": {
+													"format": "DD/MM/YYYY HH:mm:ss",
+													"extraFormats": ["DD/MM/YYYY hh:mm:ss a"]
+												},
+												"manualEntry": true,
+												"fieldClass": "form-inline vuejs-col-8"
+											},
+											"inputSelect": {
+                								"id": "inputSelect",
+												"name": "inputSelect",
+												"required": true,
+												"type": "select",
+												"label": "label inputSelect: ",
+												"fieldClass": "form-inline vuejs-col-8",
+												"multiple": false,
+												"emptySelectFirst": true,
+												"hideNone": true,
+												"dataSource": function(callback) {
+													callback([{
+														"value": "rambo",
+														"text": "John Rambo"
+													}, {
+														"value": "norris",
+														"text": "Chuck Norris"
+													}, {
+														"value": "arnold",
+														"text": "Arnold Schwarzenegger"
+													}]);
+												}
+											},
+											"inputSelectMutiple": {
+                								"id": "inputSelectMutiple",
+												"name": "inputSelectMutiple",
+												"required": false,
+												"type": "select",
+												"label": "label inputSelectMutiple: ",
+												"fieldClass": "form-inline vuejs-col-8",
+												"multiple": true,
+												"hideInitValidationError": true,
+												"multiselect": {
+													"enableFiltering": true,
+													"includeSelectAllOption": true
+												},
+												"dataSource": function(callback) {
+													callback([{
+														"value": "rambo",
+														"text": "John Rambo"
+													}, {
+														"value": "norris",
+														"text": "Chuck Norris"
+													}, {
+														"value": "arnold",
+														"text": "Arnold Schwarzenegger"
+													}]);
+												}
+											},
+											"inputFileSingle": {
+                								"id": "inputFileSingle",
+												"name": "inputFileSingle",
+												"required": false,
+												"type": "file",
+												"label": "label inputFileSingle: ",
+												"fieldClass": "form-inline vuejs-col-8"
+											},
+											"inputFileMutiple": {
+                								"id": "inputFileMutiple",
+												"name": "inputFileMutiple",
+												"required": false,
+												"type": "upload",
+												"label": "label inputFileMutiple: ",
+												"multiple": true,
+												"maxFileSize": 25000000,
+												"maxNumberOfFiles": 3,
+												"fileTypes": "(\.|\/)(gif|jpe?g|png)$",
+												"upload": {
+													"url": "http://www.alpacajs.org/fileupload/index.php"
+												}
+											},
+											"inputRadioInline": {
+                								"id": "inputRadioInline",
+												"name": "inputRadioInline",
+												"required": false,
+												"type": "radio",
+												"label": "label inputRadioInline: ",
+												"fieldClass": "form-inline vuejs-col-8",
+												"removeDefaultNone": true,
+												"vertical": false,
+												"dataSource": function(callback) {
+													callback([{
+														"value": "rambo",
+														"text": "John Rambo"
+													}, {
+														"value": "norris",
+														"text": "Chuck Norris"
+													}, {
+														"value": "arnold",
+														"text": "Arnold Schwarzenegger"
+													}]);
+												}
+											},
+											"inputCheckboxInline": {
+                								"id": "inputCheckboxInline",
+												"name": "inputCheckboxInline",
+												"required": false,
+												"type": "checkbox",
+												"label": "label inputCheckboxInline: ",
+												"fieldClass": "form-inline vuejs-col-8",
+												"removeDefaultNone": true,
+												"vertical": true,
+												"dataSource": function(callback) {
+													callback([{
+														"value": "rambo",
+														"text": "John Rambo"
+													}, {
+														"value": "norris",
+														"text": "Chuck Norris"
+													}, {
+														"value": "arnold",
+														"text": "Arnold Schwarzenegger"
+													}]);
+												}
+											},
+											"inputRadio": {
+                								"id": "inputRadio",
+												"name": "inputRadio",
+												"required": false,
+												"type": "radio",
+												"label": "label inputRadio: ",
+												"removeDefaultNone": true,
+												"vertical": true,
+												"fieldClass": "",
+												"dataSource": function(callback) {
+													
+													$.ajax({
+														url: "http://www.alpacajs.org/data/icecream-list.json",
+														type: 'GET',
+														dataType: 'json',
+														contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+														success: function(data, textStatus, xhr) {
+															
+															var source = new Array();
+
+															for (var key in data) {
+																var elObj = {};
+																if (data.hasOwnProperty(key)) {
+																	elObj["value"] = key;
+																	elObj["text"] = data[key];
+
+																	source.push(elObj);
+																}
+															}
+														
+															callback(source);
+														},
+														error: function(xhr, textStatus, errorThrown) {
+														
+														
+														
+														}
+													});
+												
+													
+												}
+											},
+											"inputTextArea": {
+                								"id": "inputTextArea",
+												"name": "inputTextArea",
+												"required": false,
+												"type": "textarea",
+												"rows": 3,
+												"label": "label inputTextArea: ",
+												"placeholder": "description",
+												"fieldClass": "form-inline vuejs-col-8"
+											},
+											"inputColor": {
+                								"id": "inputColor",
+												"name": "inputColor",
+												"required": false,
+												"type": "color",
+												"label": "label inputColor: ",
+												"fieldClass": "form-inline vuejs-col-8"
+											},
+											"inputEditor": {
+                								"id": "inputEditor",
+												"name": "inputEditor",
+												"required": false,
+												"type": "editor",
+												"label": "label inputEditor: ",
+												"fieldClass": "form-inline vuejs-col-8"
+											},
+											"inputSummernote": {
+                								"id": "inputSummernote",
+												"name": "inputSummernote",
+												"required": false,
+												"type": "summernote",
+												"label": "label inputSummernote: ",
+											}
+
+										},
+										template: "default",
+										bindings: "default",
+										postRender: function (control) { 
+											
+										}
+									});
+
+									formBuilder._inputForm();
+
+								</script>
+					
+								<div id="basicComponentsContainer">
+<script type="text/javascript">
+
+	var callBTN = document.getElementById("callBTN");
+
+		callBTN.addEventListener("click", function (e) {
+
+			//cần lấy lại cái listView để gọi hàm kiểu này
+			// listView phải lấy lại từ el: #ID từ component khác
+			// kiểu thằng Kendo lấy lại list view từ ID đc: var listView = $("#ID").getKendoListView();
+			var control = $("#basicComponentFormBuilder").alpaca("get");
+			var field = control.childrenByPropertyId['inputText'];
+
+			alert(field.getValue());
+		});
+
+</script>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="basicComponentsSource">Warning 2</div>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+					window.onload = function () {
+						$("#basicComponentsSource").html('');	
+
+						var htmlDemo = '<div id="basicComponents"></div>';
+
+						editor = CodeMirror(document.getElementById("basicComponentsSource"), {
+
+							mode: "text/html",
+
+							extraKeys: { "Ctrl-Space": "autocomplete" },
+
+							value: htmlDemo + $("#basicComponentsContainer").html()
+
+						});
+					};
+
+				</script>
+
+
+
+
+				<a name="anchor2"></a>
+				<div class="page-header">
+					<h1> Form - Single File Upload</h1>
+				</div>
+
+				<a name="anchor3"></a>
+				<div class="page-header">
+					<h1> Form - Multiple File Upload</h1>
+				</div>
+
+			</div>
+		</div>
+		<div class="row">
+
+			<footer>
+				<div class="row">
+					<div class="col-md-6">
+
+					</div>
+					<div class="col-md-6" align="right">© 2017 IScripting.&nbsp; </div>
+
+				</div>
+
+			</footer>
+
+		</div>
+	</div>
+
+</body>
+
+</html>

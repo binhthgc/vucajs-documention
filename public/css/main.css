@@ -1,0 +1,509 @@
+.alpaca-field .help-block {
+    /* position: absolute; */
+    margin-bottom: 0;
+}
+
+.alpaca-field input:not(.multiselect-search), .alpaca-field select{
+    border-width: 0 0 1px;
+    box-shadow: none !important;
+    border-radius: 0;
+    transition: all 0.3s linear;
+    padding: 0;
+}
+
+.alpaca-field-textarea textarea {
+    border-width: 0 0 1px;
+    box-shadow: none !important;
+    border-radius: 0;
+    transition: all 0.3s linear;
+    padding: 6px 0;
+}
+
+.alpaca-field input:focus, .alpaca-field select:focus, 
+.alpaca-field-textarea textarea:focus, 
+.alpaca-field-file input[type="file"]:focus {
+    box-shadow: none;
+    outline: none;
+}
+.alpaca-field-textarea.alpaca-field-focused textarea {
+    border-bottom: 2px solid #4fc08d;
+}
+.alpaca-field-select button {
+    border-width: 0 0 1px;
+    border-radius: 0;
+    width: 80%;
+    text-align: left;
+    padding: 6px 0;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+.alpaca-field-select button > * {
+    display: none;
+}
+.alpaca-field-select:before {
+    content: "\f0d7";
+    font-family: FontAwesome;
+    position: absolute;
+    right: 20px;
+    top: 7px;
+    pointer-events: none;
+}
+.alpaca-field-select select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+}
+.alpaca-field-file input[type="file"] {
+    margin-top: 7px;
+}
+.note-editor.note-frame, 
+.note-editor.note-frame .panel-heading.note-toolbar {
+    border: 0;
+    box-shadow: none;
+}
+.note-editor.note-frame .note-statusbar {
+  background-color: transparent;
+}
+.note-editor.note-frame .panel-heading.note-toolbar {
+    background-color: #f5f5f5;
+}
+.note-editor.note-frame button {
+    height: 30px;
+    border-radius: 0;
+    border-color: #ebebeb;
+}
+
+
+/**
+.alpaca-field label {
+    position: absolute;
+    top: 25px;
+    color: #999;
+    transition: all 0.3s linear;
+    width: 100%;
+    margin: 0;
+    pointer-events: none;
+    bottom: 0;
+}
+.alpaca-field.alpaca-field-focused label,
+.alpaca-field.edited label {
+    top: 0px;
+    color: #0d2434;
+}
+
+
+*/
+
+.alpaca-field label:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    background-color: transparent;
+    transition: all 0.3s linear;
+    height: 2px;
+    visibility: hidden;
+    z-index: 5;
+    top: 33px;
+}
+.alpaca-field label.checkbox:after {
+    width: 0 !important;
+}
+.form-inline .multiselect-container {
+    width: 100%;
+}
+.form-inline .multiselect-container .input-group {
+    display: flex;
+}
+.form-inline .multiselect-container .input-group input, 
+.form-inline .multiselect-container .input-group .input-group-addon {
+    box-shadow: none !important;
+    border-radius: 0;
+}
+.form-inline .multiselect-container label.checkbox, .form-inline .multiselect-container label.radio {
+    padding-left: 25px;
+}
+.form-inline .multiselect-container label.checkbox:before, 
+.form-inline .multiselect-container label.radio:before {
+    content: "";
+    font-family: FontAwesome;
+    position: absolute;
+    top: 2px;
+    left: 5px;
+}
+.alpaca-field .btn-group span {
+    border-radius: 0;
+} 
+.alpaca-field .input-group .btn {
+    border-radius: 0;
+    border-bottom: 1px solid #ccc;
+    box-shadow: none !important;
+}
+.alpaca-field .input-group label + input {
+    background-color: transparent;
+}
+.form-inline .multiselect-container .active label.checkbox:before, 
+.form-inline .multiselect-container .active label.radio:before {
+    content: "\f00c";
+}
+.form-inline .multiselect-container .active a {
+    color: #000;
+}
+.alpaca-field.alpaca-field-focused label:after {
+    left: 0;
+    width: 100%;
+    visibility: visible;
+    background-color: #4fc08d;
+}
+.alpaca-field-textarea.alpaca-field-focused label:after, 
+.alpaca-field-radio.alpaca-field-focused label:after {
+    width: 0 !important;
+}
+
+div[class*="vuejs-col"] {
+    width: 100%;
+    position: relative;
+    min-height: 1px;
+    float: left;
+}
+
+.vuejs-col-1 > label {
+    width: 90%;
+    float: left;
+    padding-top: 7px;
+}
+.vuejs-col-1 .form-control, 
+.vuejs-col-1 > .input-group {
+    width: 10%;
+}
+.vuejs-col-1 label:after {
+    left: 95%;
+}
+.vuejs-col-1.alpaca-field-focused label:after {
+    left: 90%;
+    width: 10%;
+}
+.vuejs-col-2 > label {
+    width: 80%;
+    float: left;
+    padding-top: 7px;
+}
+.vuejs-col-2 .form-control, 
+.vuejs-col-2 > .input-group {
+    width: 20%;
+}
+.vuejs-col-2 label:after {
+    left: 90%;
+}
+.vuejs-col-2.alpaca-field-focused label:after {
+    left: 80%;
+    width: 20%;
+}
+.vuejs-col-3 > label {
+    width: 70%;
+    float: left;
+    padding-top: 7px;
+}
+.vuejs-col-3 .form-control, 
+.vuejs-col-3 > .input-group {
+    width: 30%;
+}
+.vuejs-col-3 label:after {
+    left: 85%;
+}
+.vuejs-col-3.alpaca-field-focused label:after {
+    left: 70%;
+    width: 30%;
+}
+.vuejs-col-4 > label {
+    width: 60%;
+    float: left;
+    padding-top: 7px;
+}
+.vuejs-col-4 .form-control, 
+.vuejs-col-4 > .input-group {
+    width: 40%;
+}
+.vuejs-col-4 label:after {
+    left: 80%;
+}
+.vuejs-col-4.alpaca-field-focused label:after {
+    left: 60%;
+    width: 40%;
+}
+.vuejs-col-5 > label {
+    width: 50%;
+    float: left;
+    padding-top: 7px;
+}
+.vuejs-col-5 .form-control, 
+.vuejs-col-5 > .input-group {
+    width: 50%;
+}
+.vuejs-col-5 label:after {
+    left: 75%;
+}
+.vuejs-col-5.alpaca-field-focused label:after {
+    left: 50%;
+    width: 50%;
+}
+.vuejs-col-6 > label {
+    width: 40%;
+    float: left;
+    padding-top: 7px;
+}
+.vuejs-col-6 .form-control, 
+.vuejs-col-6 > .input-group {
+    width: 60%;
+}
+.vuejs-col-6 label:after {
+    left: 70%;
+}
+.vuejs-col-6.alpaca-field-focused label:after {
+    left: 40%;
+    width: 60%;
+}
+.vuejs-col-7 > label {
+    width: 30%;
+    float: left;
+    padding-top: 7px;
+}
+.vuejs-col-7 .form-control, 
+.vuejs-col-7 > .input-group {
+    width: 70%;
+}
+.vuejs-col-7 label:after {
+    left: 65%;
+}
+.vuejs-col-7.alpaca-field-focused label:after {
+    left: 30%;
+    width: 70%;
+}
+.vuejs-col-8 > label {
+    width: 20%;
+    float: left;
+    padding-top: 7px;
+}
+.vuejs-col-8 .form-control, 
+.vuejs-col-8 > .input-group {
+    width: 80%;
+}
+.vuejs-col-8 label:after {
+    left: 60%;
+}
+.vuejs-col-8.alpaca-field-focused label:after {
+    left: 20%;
+    width: 80%;
+}
+.vuejs-col-9 > label {
+    width: 10%;
+    float: left;
+    padding-top: 7px;
+}
+.vuejs-col-9 .form-control, 
+.vuejs-col-9 > .input-group {
+    width: 90%;
+}
+.vuejs-col-9 label:after {
+    left: 55%;
+}
+.vuejs-col-9.alpaca-field-focused label:after {
+    left: 10%;
+    width: 90%;
+}
+div[class*="vuejs-col"] > .input-group > .input-group-btn {
+    width: 1%;
+}
+
+.alpaca-field-radio > label, .alpaca-field-checkbox > label {
+    padding: 0;
+    font-weight: bold;
+}
+
+html .btn-show-code {
+    position: absolute;
+    top: 11px;
+    right: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #337ab7;
+    font-size: 24px;
+    border-bottom: 1px dashed;
+    text-decoration: none;
+}
+
+.alpaca-icon-required.glyphicon-star {
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+
+html .alpaca-field-object.alpaca-top {
+    width: 100%;
+}
+
+body .alpaca-control.radio {
+
+    margin-left: 0;
+
+}
+body .alpaca-field .radio input[type="radio"] ,
+body .alpaca-field .checkbox input[type="checkbox"] {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.alpaca-control.radio label,
+.alpaca-control.checkbox label {
+    width: 100%;
+    padding-right: 20px;
+    text-indent: 25px;
+    line-height: 17px;
+}
+
+.alpaca-control.radio label::before {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+    background-color: #fff;
+    background-color: #ccc;
+    -webkit-transition: border 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out;
+}
+
+.alpaca-control.checkbox label::before {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    border: 1px solid #cccccc;
+    background-color: #fff;
+    background-color: #ccc;
+    -webkit-transition: border 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out;
+}
+
+.alpaca-control.radio input[type="radio"]:checked + label::before,
+.alpaca-control.checkbox input[type="checkbox"]:checked + label::before {
+    content: "";
+    border-color: #0d2434;
+    background-color: #0d2434;
+}
+
+html .alpaca-fileupload-container,
+html .alpaca-fileupload-container .container-fluid,
+html .alpaca-fileupload-container .container-fluid .alpaca-fileupload-chooserow,
+html .alpaca-fileupload-container .container-fluid .alpaca-fileupload-chooserow > div:first-child {
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+}
+
+html .alpaca-fileupload-container .container-fluid .alpaca-fileupload-well{
+
+    margin-bottom: 0px;
+
+}
+html .alpaca-fileupload-container .container-fluid .fileupload-active-zone,
+html .alpaca-fileupload-container .container-fluid .fileupload-active-zone table {
+
+    border-radius: 0;
+    margin: 0;
+    padding: 0 5px;
+
+}
+
+.circle-loader {
+    margin: 0 0 30px 10px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-left-color: #5cb85c;
+    animation-name: loader-spin;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.circle-loader,
+.circle-loader:after {
+    border-radius: 50%;
+    width: 8em;
+    height: 8em;
+}
+
+.load-complete {
+    -webkit-animation: none;
+    animation: none;
+    border-color: #5cb85c;
+    transition: border 500ms ease-out;
+}
+
+.checkmark {
+    display: none;
+}
+
+.checkmark.draw:after {
+    animation-duration: 800ms;
+    animation-timing-function: ease;
+    animation-name: checkmark;
+    transform: scaleX(-1) rotate(135deg);
+}
+
+.checkmark:after {
+    opacity: 1;
+    height: 4em;
+    width: 2em;
+    transform-origin: left top;
+    border-right: 2px solid #5cb85c;
+    border-top: 2px solid #5cb85c;
+    content: "";
+    left: 2em;
+    top: 4em;
+    position: absolute;
+}
+
+@keyframes loader-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes checkmark {
+    0% {
+        height: 0;
+        width: 0;
+        opacity: 1;
+    }
+    20% {
+        height: 0;
+        width: 2em;
+        opacity: 1;
+    }
+    40% {
+        height: 4em;
+        width: 2em;
+        opacity: 1;
+    }
+    100% {
+        height: 4em;
+        width: 2em;
+        opacity: 1;
+    }
+}
